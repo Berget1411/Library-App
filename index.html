@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="popup.css" />
     <script src="script.js" defer></script>
     <title>Library App</title>
   </head>
@@ -21,6 +22,23 @@
     <main>
       <section class="add-book-section">
         <button class="add-book-button">+ Add book</button>
+        <div class="pop-up">
+          <div class="pop-up-header">
+            <h2>Add new book</h2>
+            <button>&times</button>
+          </div>
+          <form action="">
+            <input type="text" id="title" placeholder="Title" />
+            <input type="text" id="author" placeholder="Author" />
+            <input type="number" id="pages" placeholder="Pages" />
+            <div class="is-read-section">
+              <label for="is-read">Have you read it?</label>
+              <input id="is-read" type="checkbox" />
+            </div>
+            <input type="submit" />
+          </form>
+        </div>
+        <div id="overlay"></div>
       </section>
       <section class="added-books"></section>
     </main>

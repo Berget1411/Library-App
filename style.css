@@ -39,6 +39,10 @@ header button {
   font-family: "ADLaM Display", sans-serif;
 }
 
+header button:hover {
+  background-color: #cbd5e1;
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -64,8 +68,7 @@ main {
   font-weight: bold;
 }
 
-.add-book-button:hover,
-header button:hover {
+.add-book-button:hover {
   background-color: #cbd5e1;
 }
 
