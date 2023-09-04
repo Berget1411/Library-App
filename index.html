@@ -28,14 +28,14 @@
             <button>&times</button>
           </div>
           <form action="">
-            <input type="text" id="title" placeholder="Title" />
-            <input type="text" id="author" placeholder="Author" />
-            <input type="number" id="pages" placeholder="Pages" />
-            <div class="is-read-section">
-              <label for="is-read">Have you read it?</label>
-              <input id="is-read" type="checkbox" />
+            <input type="text" id="title" placeholder="Title" required />
+            <input type="text" id="author" placeholder="Author" required />
+            <input type="number" id="pages" placeholder="Pages" required />
+            <div class="have-read-section">
+              <label for="have-read">Have you read it?</label>
+              <input id="have-read" type="checkbox" />
             </div>
-            <input type="submit" />
+            <input type="submit" id="submit" />
           </form>
         </div>
         <div id="overlay"></div>

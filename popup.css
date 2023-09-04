@@ -54,14 +54,14 @@ input[type="number"]:focus {
   border: 2px solid var(--primary-background-color);
 }
 
-.is-read-section {
+.have-read-section {
   display: flex;
   gap: 10px;
   justify-content: center;
   font-size: 1.2em;
 }
 
-#is-read {
+#have-read {
   width: 20px;
 }
 
