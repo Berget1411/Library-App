@@ -46,10 +46,9 @@ header button:hover {
 main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 120px 1fr;
   background-color: var(--secondary-background-color);
-  height: 80vh;
-  justify-items: center;
+  min-height: 80vh;
 }
 
 .add-book-section {
@@ -74,9 +73,10 @@ main {
 }
 
 .added-books {
-  height: 800px;
+  padding: 0px 40px 40px 40px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .added-books ul {
@@ -105,16 +105,30 @@ main {
   font-size: 1em;
 }
 
-.added-books ul button:last-of-type {
+.remove-button {
   background-color: var(--secondary-background-color);
 }
 
-.read {
-  background-color: green !important;
+.remove-button:hover {
+  background-color: #cbd5e1;
+}
+
+.have-read {
+  background-color: #6ee7b7 !important;
+  transition: background-color 0.2s;
+}
+
+.have-read:hover {
+  background-color: #10b981 !important;
 }
 
 .not-read {
-  background-color: red !important;
+  background-color: #fca5a5 !important;
+  transition: background-color 0.2s;
+}
+
+.not-read:hover {
+  background-color: #f87171 !important;
 }
 
 .book {
