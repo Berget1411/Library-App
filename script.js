@@ -32,7 +32,9 @@ function getValues(e) {
 }
 addBookForm.addEventListener("submit", getValues);
 
+function displayBook() {}
+
 function addBookToLibrary(newBook) {
   myLibrary.push(newBook);
-  console.log(myLibrary);
+  displayBook();
 }
