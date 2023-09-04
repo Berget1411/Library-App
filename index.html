@@ -30,7 +30,14 @@
           <form action="">
             <input type="text" id="title" placeholder="Title" required />
             <input type="text" id="author" placeholder="Author" required />
-            <input type="number" id="pages" placeholder="Pages" required />
+            <input
+              type="number"
+              id="pages"
+              placeholder="Pages"
+              min="50"
+              max="21450"
+              required
+            />
             <div class="have-read-section">
               <label for="have-read">Have you read it?</label>
               <input id="have-read" type="checkbox" />
@@ -45,7 +52,7 @@
     <footer>
       <p>Copyright © 2023 Berget</p>
       <a href="https://github.com/Berget1411"
-        ><img src="img/github-mark.svg" alt=""
+        ><img src="images/github-mark.svg" alt=""
       /></a>
     </footer>
   </body>
