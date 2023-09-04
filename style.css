@@ -1,0 +1,84 @@
+:root {
+  --primary-background-color: #1e293b;
+  --primary-text-color: #e2e8f0;
+  --secondary-background-color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--primary-background-color);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+header h1 {
+  color: var(--primary-text-color);
+  font-size: 2.2em;
+  font-family: "ADLaM Display", sans-serif;
+}
+
+header button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--primary-text-color);
+  transition: background-color 0.2s;
+
+  font-size: 1.1em;
+  font-family: "ADLaM Display", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  background-color: var(--secondary-background-color);
+  height: 80vh;
+}
+
+.add-book-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-book-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--secondary-background-color);
+  transition: background-color 0.2s;
+
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.add-book-button:hover,
+header button:hover {
+  background-color: #cbd5e1;
+}
+
+.added-books {
+  height: 800px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 10px;
+  font-size: 1.2em;
+  background-color: var(--secondary-background-color);
+}
