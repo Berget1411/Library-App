@@ -95,13 +95,13 @@ function getValues(e) {
   e.preventDefault();
   togglePopup();
   let title = document.querySelector("#title").value;
-
+  document.querySelector("#title").value = "";
   let author = document.querySelector("#author").value;
-
+  document.querySelector("#author").value = "";
   let pages = document.querySelector("#pages").value;
-
+  document.querySelector("#pages").value = "";
   let haveRead = document.querySelector("#have-read").checked;
-
+  document.querySelector("#have-read").checked = false;
   let newBook = new Book(title, author, pages, haveRead);
 
   addBookToLibrary(newBook);
