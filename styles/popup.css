@@ -41,6 +41,7 @@ form {
 
 input[type="text"],
 input[type="number"] {
+  width: 100%;
   padding: 10px;
   border-radius: 6px;
   border: none;
@@ -93,4 +94,25 @@ input[type="submit"]:hover {
 #overlay.active {
   opacity: 1;
   pointer-events: all;
+}
+
+.error {
+  padding: 0;
+  margin: 0;
+
+  font-size: 80%;
+  color: #fca5a5;
+  border-radius: 0 0 5px 5px;
+
+  display: block;
+}
+
+.error.active {
+  height: 10px;
+  padding: 5px;
+}
+
+.invalid {
+  padding: 8px !important;
+  border: 2px solid #fca5a5 !important ;
 }

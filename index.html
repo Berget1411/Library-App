@@ -27,22 +27,44 @@
             <h2>Add new book</h2>
             <button>&times</button>
           </div>
-          <form action="">
-            <input type="text" id="title" placeholder="Title" required />
-            <input type="text" id="author" placeholder="Author" required />
-            <input
-              type="number"
-              id="pages"
-              placeholder="Pages"
-              min="50"
-              max="21450"
-              required
-            />
+          <form action="" novalidate>
+            <div>
+              <input
+                type="text"
+                id="title"
+                placeholder="Title"
+                required
+                minlength="3"
+              />
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <div>
+              <input
+                type="text"
+                id="author"
+                placeholder="Author"
+                required
+                minlength="3"
+              />
+              <span class="error" aria-live="polite"></span>
+            </div>
+
+            <div>
+              <input
+                type="number"
+                id="pages"
+                placeholder="Pages"
+                min="50"
+                max="21450"
+                required
+              />
+              <span class="error" aria-live="polite"></span>
+            </div>
             <div class="have-read-section">
               <label for="have-read">Have you read it?</label>
               <input id="have-read" type="checkbox" />
             </div>
-            <input type="submit" id="submit" />
+            <input type="submit" id="submit" value="Add" />
           </form>
         </div>
         <div id="overlay"></div>

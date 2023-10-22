@@ -5,6 +5,13 @@ const closeButton = document.querySelector(".pop-up-header button");
 const addBookForm = document.querySelector("form");
 const addedBooks = document.querySelector(".added-books");
 
+const titleInput = document.querySelector("#title");
+const titleError = document.querySelector("#title + .error");
+const authorInput = document.querySelector("#author");
+const authorError = document.querySelector("#author + .error");
+const pagesInput = document.querySelector("#pages");
+const pagesError = document.querySelector("#pages + .error");
+
 // Array with all stored books
 const myLibrary = [];
 
@@ -95,18 +102,85 @@ function addBookToLibrary(newBook) {
 
 function getValues(e) {
   e.preventDefault();
-  togglePopup();
-  let title = document.querySelector("#title").value;
-  document.querySelector("#title").value = "";
-  let author = document.querySelector("#author").value;
-  document.querySelector("#author").value = "";
-  let pages = document.querySelector("#pages").value;
-  document.querySelector("#pages").value = "";
-  let haveRead = document.querySelector("#have-read").checked;
-  document.querySelector("#have-read").checked = false;
-  let newBook = new Book(title, author, pages, haveRead);
+  if (!titleInput.validity.valid) {
+    showTitleError();
+  } else if (!authorInput.validity.valid) {
+    showAuthorError();
+  } else {
+    togglePopup();
+    let title = document.querySelector("#title").value;
+    document.querySelector("#title").value = "";
+    let author = document.querySelector("#author").value;
+    document.querySelector("#author").value = "";
+    let pages = document.querySelector("#pages").value;
+    document.querySelector("#pages").value = "";
+    let haveRead = document.querySelector("#have-read").checked;
+    document.querySelector("#have-read").checked = false;
+    let newBook = new Book(title, author, pages, haveRead);
 
-  addBookToLibrary(newBook);
+    addBookToLibrary(newBook);
+  }
 }
 
 addBookForm.addEventListener("submit", getValues);
+
+// Form Validation
+titleInput.addEventListener("input", (e) => {
+  if (titleInput.validity.valid) {
+    titleError.textContent = "";
+    titleError.classList = "error";
+    titleInput.classList.remove("invalid");
+  } else {
+    showTitleError();
+  }
+});
+
+function showTitleError() {
+  if (titleInput.validity.valueMissing) {
+    titleError.textContent = "You need to enter a title.";
+  } else if (titleInput.validity.tooShort) {
+    titleError.textContent = `Title should be at least ${titleInput.minLength} characters`;
+  }
+  titleError.className = "error active";
+  titleInput.classList.add("invalid");
+}
+
+authorInput.addEventListener("input", (e) => {
+  if (authorInput.validity.valid) {
+    authorError.textContent = "";
+    authorError.classList = "error";
+    authorInput.classList.remove("invalid");
+  } else {
+    showAuthorError();
+  }
+});
+
+function showAuthorError() {
+  if (authorInput.validity.valueMissing) {
+    authorError.textContent = "You need to enter an author.";
+  } else if (authorInput.validity.tooShort) {
+    authorError.textContent = `Name should be at least ${authorInput.minLength} characters`;
+  }
+  authorError.className = "error active";
+  authorInput.classList.add("invalid");
+}
+
+pagesInput.addEventListener("input", (e) => {
+  if (pagesInput.validity.valid) {
+    pagesError.textContent = "";
+    pagesError.classList = "error";
+    pagesInput.classList.remove("invalid");
+  } else {
+    showpagesError();
+  }
+});
+
+function showpagesError() {
+  if (pagesInput.validity.rangeUnderflow) {
+    pagesError.textContent = `Book should have at least ${pagesInput.min} pages`;
+  } else if (pagesInput.validity.rangeOverflow) {
+    pagesError.textContent = `Book shouldn't have more than ${pagesInput.max} pages`;
+  }
+
+  pagesInput.classList.add("invalid");
+}
